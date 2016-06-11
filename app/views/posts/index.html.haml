@@ -1,0 +1,19 @@
+%h1 Listing of Posts 
+%table.table
+  %thead
+    %th Title
+    %th Text
+  %tbody
+    -@statement.each do |post|
+    %tr
+      %td
+        = post.title
+      %td
+        = post.text
+      %td
+        = link_to 'Show', statement, class: 'btn btn-default btn-xs'
+        = link_to 'Edit', edit_statement_path(statement),
+                          class: 'btn btn-default btn-xs'
+        = link_to 'Destroy', statement, :confirm => 'Are you sure?',
+                          :method => :delete,
+                          class: 'btn btn-xs btn-danger'

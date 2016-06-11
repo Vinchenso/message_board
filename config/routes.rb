@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+  get 'posts/new'
+
+  get 'posts/edit'
+
+  get 'posts/show'
+
   devise_for :users
-  get 'home/homepage'
+
+  resources :posts
 
   root 'home#homepage'
   # The priority is based upon order of creation: first created -> highest priority.
